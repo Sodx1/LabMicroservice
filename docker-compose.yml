@@ -19,8 +19,6 @@ services:
       - app-network
     expose:
       - "5001"
-    volumes:
-      - ./logs/service1:/app/logs
 
   service2:
     build:
@@ -30,8 +28,6 @@ services:
       - app-network
     expose:
       - "5002"
-    volumes:
-      - ./logs/service2:/app/logs
 
 networks:
   app-network:
