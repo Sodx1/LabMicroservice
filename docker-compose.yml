@@ -1,15 +1,6 @@
 version: '3.8'
 
 services:
-  logstash:
-    build:
-      context: ./logstash
-    container_name: logstash
-    volumes:
-      - ./logs:/app/logs
-    networks:
-      - app-network
-
   nginx:
     image: nginx:latest
     container_name: nginx
