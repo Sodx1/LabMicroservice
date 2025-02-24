@@ -1,15 +1,6 @@
 version: '3.8'
 
 services:
-  logstash:
-    build:
-      context: ./logstash
-    container_name: logstash
-    volumes:
-      - ./logs:/app/logs
-    networks:
-      - app-network
-
   nginx:
     image: nginx:latest
     container_name: nginx
@@ -28,8 +19,6 @@ services:
       - app-network
     expose:
       - "5001"
-    volumes:
-      - ./logs/service1:/app/logs
 
   service2:
     build:
@@ -39,8 +28,6 @@ services:
       - app-network
     expose:
       - "5002"
-    volumes:
-      - ./logs/service2:/app/logs
 
 networks:
   app-network:
